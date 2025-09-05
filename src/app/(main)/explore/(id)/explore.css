@@ -1,4 +1,4 @@
-/* explore.css */
+/* src/app/(main)/explore/[id]/explore.css */
 .explore-container {
   padding: 20px;
   font-family: Arial, sans-serif;
@@ -11,3 +11,4 @@
 .explore-container p {
   color: #555;
 }
+
