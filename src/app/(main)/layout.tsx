@@ -9,10 +9,9 @@ export const metadata = {
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-muted">
-        {children}
-      </body>
+      <body className="bg-muted">{children}</body>
     </html>
   );
 }
+
 
