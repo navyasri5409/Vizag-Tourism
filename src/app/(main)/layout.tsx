@@ -1,21 +1,18 @@
+// src/app/(main)/layout.tsx
+import React from "react";
 
-"use client";
+export const metadata = {
+  title: "Vizag Tourism",
+  description: "Explore Visakhapatnam with AI-powered suggestions",
+};
 
-import { Card, CardContent } from "@/components/ui/card";
-import { Map } from "lucide-react";
-
-export default function MapPage() {
+export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex-1 flex flex-col items-center justify-center bg-muted/40 p-4">
-       <Card className="max-w-md text-center">
-            <CardContent className="p-8">
-                <Map className="h-16 w-16 mx-auto text-primary mb-4" />
-                <h1 className="text-2xl font-bold mb-2 font-headline">Interactive Map Coming Soon</h1>
-                <p className="text-muted-foreground">
-                    We're working on an interactive map to help you navigate Visakhapatnam with ease.
-                </p>
-            </CardContent>
-        </Card>
-    </div>
+    <html lang="en">
+      <body className="bg-muted">
+        {children}
+      </body>
+    </html>
   );
 }
+
