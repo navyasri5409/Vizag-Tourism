@@ -1,30 +1,19 @@
-"use client";
-
+"use client"; // must be first line
 import './explore.css';
-
-import React from "react";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Heart,
-  Headphones,
-  Clock,
-  IndianRupee,
-  MapPin,
-  Compass,
-  AlertTriangle
-} from "lucide-react";
-import { categories } from "@/lib/data";
-import type { PointOfInterest } from "@/lib/types";
-import "./explore.css"; // Only import CSS here
+import React from 'react';
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Heart, Headphones, Clock, IndianRupee, MapPin, Compass, AlertTriangle } from 'lucide-react';
+import { categories } from '@/lib/data';
+import type { PointOfInterest } from '@/lib/types';
 
 export default function ExploreClient({ poi }: { poi: PointOfInterest }) {
   const CategoryIcon = categories[poi.category]?.icon || Compass;
 
   return (
-    <div className="flex flex-col flex-1 bg-muted/20">
+    <div className="flex flex-col flex-1 bg-muted/20 explore-container">
       {/* Hero Section */}
       <section className="relative h-[50vh] flex items-end text-white">
         <Image src={poi.imageUrl} alt={poi.name} fill className="object-cover" />
@@ -45,9 +34,9 @@ export default function ExploreClient({ poi }: { poi: PointOfInterest }) {
         </div>
       </section>
 
+      {/* Main Content */}
       <div className="container mx-auto px-4 md:px-6 py-8 md:py-12">
         <div className="grid md:grid-cols-3 gap-8">
-          {/* Main Content */}
           <div className="md:col-span-2">
             <h2 className="text-2xl font-bold font-headline mb-4">Overview</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">{poi.longDescription}</p>
@@ -115,3 +104,4 @@ export default function ExploreClient({ poi }: { poi: PointOfInterest }) {
     </div>
   );
 }
+
